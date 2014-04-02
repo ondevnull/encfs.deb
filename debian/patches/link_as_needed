@@ -1,0 +1,13 @@
+Index: encfs-1.5.2/encfs/Makefile.am
+===================================================================
+--- encfs-1.5.2.orig/encfs/Makefile.am	2008-08-23 23:48:12.000000000 +0200
++++ encfs-1.5.2/encfs/Makefile.am	2009-05-25 21:07:29.137662602 +0200
+@@ -2,7 +2,7 @@
+ include $(top_srcdir)/Makefile.common
+ 
+ ALL_INCLUDES = @RLOG_CFLAGS@ @OPENSSL_CFLAGS@ @BOOST_CPPFLAGS@
+-ALL_LDFLAGS = @RLOG_LIBS@ @OPENSSL_LIBS@ @FUSE_LIBS@ 
++ALL_LDFLAGS = @RLOG_LIBS@ @OPENSSL_LIBS@ @FUSE_LIBS@ -Wl,--as-needed
+ ALL_LDFLAGS += @BOOST_SERIALIZATION_LIB@ @BOOST_FILESYSTEM_LIB@
+ 
+ INCLUDES = $(all_includes) -I../intl

@@ -1,0 +1,125 @@
+Index: encfs-1.4.1.1/encfs/ConfigVar.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/ConfigVar.cpp	2008-01-05 23:39:12.000000000 +0100
++++ encfs-1.4.1.1/encfs/ConfigVar.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -18,6 +18,8 @@
+ #include "ConfigVar.h"
+ #include <rlog/rlog.h>
+ 
++#include <string.h>
++
+ using namespace rlog;
+ 
+ #ifndef MIN
+Index: encfs-1.4.1.1/encfs/BlockFileIO.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/BlockFileIO.cpp	2008-01-05 23:39:12.000000000 +0100
++++ encfs-1.4.1.1/encfs/BlockFileIO.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -22,6 +22,8 @@
+ #include <string.h>
+ #include <rlog/rlog.h>
+ 
++#include <string.h>
++
+ #include "i18n.h"
+ 
+ template<typename Type>
+Index: encfs-1.4.1.1/encfs/BlockNameIO.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/BlockNameIO.cpp	2008-01-05 23:39:12.000000000 +0100
++++ encfs-1.4.1.1/encfs/BlockNameIO.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -25,6 +25,7 @@
+ #include <rlog/Error.h>
+ #include <rlog/RLogChannel.h>
+ 
++#include <string.h>
+ #include "i18n.h"
+ 
+ using namespace rlog;
+Index: encfs-1.4.1.1/encfs/DirNode.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/DirNode.cpp	2008-01-16 08:28:17.000000000 +0100
++++ encfs-1.4.1.1/encfs/DirNode.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -27,6 +27,7 @@
+ #include <stdlib.h>
+ #include <pthread.h>
+ #include <unistd.h>
++#include <string.h>
+ #ifdef linux
+ #include <sys/fsuid.h>
+ #endif
+Index: encfs-1.4.1.1/encfs/FileNode.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/FileNode.cpp	2008-01-05 23:39:12.000000000 +0100
++++ encfs-1.4.1.1/encfs/FileNode.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -24,6 +24,8 @@
+ #include <sys/types.h>
+ #include <fcntl.h>
+ #include <unistd.h>
++#include <string.h>
++
+ #ifdef linux
+ #include <sys/fsuid.h>
+ #endif
+Index: encfs-1.4.1.1/encfs/MACFileIO.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/MACFileIO.cpp	2008-01-05 23:39:12.000000000 +0100
++++ encfs-1.4.1.1/encfs/MACFileIO.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -25,6 +25,7 @@
+ 
+ #include <string.h>
+ 
++#include <string.h>
+ #include "i18n.h"
+ 
+ using namespace rlog;
+Index: encfs-1.4.1.1/encfs/NameIO.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/NameIO.cpp	2008-01-05 23:39:12.000000000 +0100
++++ encfs-1.4.1.1/encfs/NameIO.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -30,6 +30,8 @@
+ #include "StreamNameIO.h"
+ #include "NullNameIO.h"
+ 
++#include <string.h>
++
+ using namespace std;
+ using namespace rel;
+ using namespace rlog;
+Index: encfs-1.4.1.1/encfs/NullNameIO.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/NullNameIO.cpp	2008-01-05 23:39:12.000000000 +0100
++++ encfs-1.4.1.1/encfs/NullNameIO.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -20,6 +20,8 @@
+ #include "Cipher.h"
+ #include "base64.h"
+ 
++#include <string.h>
++
+ using namespace rel;
+ using boost::shared_ptr;
+ 
+Index: encfs-1.4.1.1/encfs/RawFileIO.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/RawFileIO.cpp	2008-01-05 23:39:12.000000000 +0100
++++ encfs-1.4.1.1/encfs/RawFileIO.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -30,6 +30,7 @@
+ #include <string.h>
+ 
+ #include <errno.h>
++#include <string.h>
+ 
+ using namespace std;
+ 
+Index: encfs-1.4.1.1/encfs/StreamNameIO.cpp
+===================================================================
+--- encfs-1.4.1.1.orig/encfs/StreamNameIO.cpp	2008-01-05 23:39:12.000000000 +0100
++++ encfs-1.4.1.1/encfs/StreamNameIO.cpp	2008-02-10 21:40:47.000000000 +0100
+@@ -23,6 +23,7 @@
+ #include <rlog/rlog.h>
+ #include <rlog/Error.h>
+ 
++#include <string.h>
+ #include "i18n.h"
+ 
+ using namespace rel;

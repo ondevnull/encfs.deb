@@ -1,0 +1,833 @@
+Index: encfs-1.7.4/po/de.po
+===================================================================
+--- encfs-1.7.4.orig/po/de.po	2010-12-27 20:56:00.000000000 +0100
++++ encfs-1.7.4/po/de.po	2010-12-27 21:01:46.119328848 +0100
+@@ -1,172 +1,324 @@
+-# German (Germany) translation for Encrypted Filesystem for Linux
++# German translation for Encrypted Filesystem for Linux
+ # Copyright (c) (c) 2004 Canonical Ltd, and Rosetta Contributors 2004
+ # This file is distributed under the same license as the Encrypted Filesystem for Linux package.
+-# FIRST AUTHOR <EMAIL@ADDRESS>, 2004.
++# Valient Gough <vgough@pobox.com>, 2004.
++# Mathias Klein <ma_klein@gmx.de>, 2006
+ #
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: Encrypted Filesystem for Linux\n"
+ "Report-Msgid-Bugs-To: vgough@pobox.com\n"
+-"POT-Creation-Date: 2010-11-18 00:12-0800\n"
+-"PO-Revision-Date: 2008-03-02 11:16+0000\n"
+-"Last-Translator: Keruskerfuerst <armin_mohring@web.de>\n"
+-"Language-Team: German (Germany) <de_DE@li.org>\n"
+-"Language: \n"
++"POT-Creation-Date: 2005-11-11 14:17-0800\n"
++"PO-Revision-Date: 2006-01-27 08:41+0100\n"
++"Last-Translator: Mathias Klein <ma_klein@gmx.de>\n"
++"Language-Team: german <debian-l10-german@lists.debain.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+-"X-Launchpad-Export-Date: 2010-06-17 04:44+0000\n"
+-"X-Generator: Launchpad (build Unknown)\n"
+-"X-Rosetta-Version: 0.1\n"
++"Plural-Forms: nplurals=2; plural=n != 1"
+ 
+ # start po-group: [none]
+-# start po-group: [none]
+-#: encfs/BlockFileIO.cpp:414
++#: encfs/BlockFileIO.cpp:410
+ #, c-format
+ msgid "truncate failure: read %i bytes, partial block of %i"
+ msgstr "Abschneiden gescheitert: lese %i Bytes, Teilblock von %i"
+ 
+-#: encfs/BlockNameIO.cpp:50
++# start po-group: setup
++#: encfs/BlockNameIO.cpp:48
+ msgid "Block encoding, hides file name size somewhat"
+-msgstr "Blockverschlüsselung, versteckt die Dateinamengröße etwas"
++msgstr "Block-Verschlüsselung, verschleiert die Dateinamenlänge etwas"
++
++#: encfs/CipherV3.cpp:65
++msgid "algorithm compatible with EncFS 0.2-0.6"
++msgstr "Algorithmus kompatibel mit EncFS 0.2-0.6"
++
++# start po-group: usage
++#: encfs/encfsctl.cpp:73
++msgid "  -- show information (Default command)"
++msgstr "  -- Informationen anzeigen (Standard-Kommando)"
++
++#: encfs/encfsctl.cpp:76
++msgid "  -- change password for volume"
++msgstr "  -- Passwort für Dateisystem ändern"
++
++#: encfs/encfsctl.cpp:79
++msgid ""
++"  -- change password for volume, taking password from standard input.\n"
++"\tNo prompts are issued."
++msgstr ""
++"  -- Passwort für Dateisystem ändern, nehme Passwort von der Standardeingabe.\n"
++"\tEs erfolgt keine Anzeige."
++
++#: encfs/encfsctl.cpp:84
++msgid "  -- show undecodable filenames in the volume"
++msgstr "  -- zeigt nicht-entschlüsselbare Dateinamen im Dateisystem an"
++
++#: encfs/encfsctl.cpp:87
++msgid "  -- decodes the file and cats it to standard out"
++msgstr "  -- entschlüsselt die Datei und gibt sie auf der Standardausgabe aus"
+ 
+-#: encfs/FileUtils.cpp:322
++#: encfs/encfsctl.cpp:90
++msgid "  -- decodes name and prints plaintext version"
++msgstr "  -- dekodiert Namen und gibt Textversion aus"
++
++#: encfs/encfsctl.cpp:93
++msgid "  -- encodes a filename and print result"
++msgstr "  -- verschlüsselt einen Dateinamen und gibt das Resultat aus"
++
++#: encfs/encfsctl.cpp:96
++msgid "  -- decrypts a volume and writes results to path"
++msgstr "  -- entschlüsselt ein Dateisystem und schreibt das Ergebnis in den Pfad"
++
++#: encfs/encfsctl.cpp:99
++msgid "  -- print version number and exit"
++msgstr "  -- Versionsnummer ausgeben und beenden"
++
++#: encfs/encfsctl.cpp:108 encfs/encfsctl.cpp:152
+ #, c-format
+-msgid "The directory \"%s\" does not exist. Should it be created? (y,n) "
++msgid "encfsctl version %s"
++msgstr "encfsctl-Version %s"
++
++#: encfs/encfsctl.cpp:109
++msgid "Usage:\n"
++msgstr "Aufruf:\n"
++
++#: encfs/encfsctl.cpp:112
++#, c-format
++msgid ""
++"%s (root dir)\n"
++"  -- displays information about the filesystem, or \n"
++msgstr ""
++"%s (Wurzelverzeichnis)\n"
++"  -- zeigt Informationen über das Dateisystem oder\n"
++
++#: encfs/encfsctl.cpp:129
++#, c-format
++msgid ""
++"Example: \n"
++"%s info ~/.crypt\n"
+ msgstr ""
+-"Das Verzeichnis \"%s\" existiert nicht. Soll es angelegt werden? (j,n) "
++"Beispiel: \n"
++"%s info ~/.crypt\n"
++
++#: encfs/encfsctl.cpp:137
++#, c-format
++msgid "directory %s does not exist.\n"
++msgstr "Verzeichnis %s existiert nicht.\n"
++
++# start po-group: diag
++#: encfs/encfsctl.cpp:172 encfs/encfsctl.cpp:558
++msgid "Unable to load or parse config file\n"
++msgstr "Kann Konfigurationsdatei nicht laden oder analysieren\n"
++
++#: encfs/encfsctl.cpp:176
++msgid ""
++"A really old EncFS filesystem was found. \n"
++"It is not supported in this EncFS build.\n"
++msgstr ""
++"Ein veraltetes EncFS-Dateisystem wurde gefunden,\n"
++"welches nicht von der aktuellen Version unterstützt wird.\n"
++
++#: encfs/encfsctl.cpp:181
++#, c-format
++msgid "Version 3 configuration; created by %s\n"
++msgstr "Version 3 Konfiguration; erstellt von %s\n"
++
++#: encfs/encfsctl.cpp:186
++#, c-format
++msgid "Version 4 configuration; created by %s\n"
++msgstr "Version 4 Konfiguration; erstellt von %s\n"
++
++#: encfs/encfsctl.cpp:191
++#, c-format
++msgid "Version 5 configuration; created by %s (revision %i)\n"
++msgstr "Verion 5 Konfiguration; erstellt von %s (Revision %i)\n"
++
++#: encfs/encfsctl.cpp:217
++msgid "Unable to initialize encrypted filesystem - check path.\n"
++msgstr "Kann das verschlüsselte Dateisystem nicht initialisieren - bitte Pfad prüfen.\n"
++# initialize muss nicht anlegen bedeuten, oder?
++
++#: encfs/encfsctl.cpp:492
++#, c-format
++msgid "In directory %s: \n"
++msgstr "Im Verzeichnis %s:\n"
++
++#: encfs/encfsctl.cpp:540
++#, c-format
++msgid "Found %i invalid file."
++msgid_plural "Found %i invalid files."
++msgstr[0] "%i ungültige Datei gefunden."
++msgstr[1] "%i ungültige Dateien gefunden."
+ 
+-#: encfs/FileUtils.cpp:331
++#: encfs/encfsctl.cpp:566
++#, c-format
++msgid "Unable to find specified cipher \"%s\"\n"
++msgstr "Konnte spezifizierte Verschlüsselung »%s« nicht finden.\n"
++
++#: encfs/encfsctl.cpp:572
++msgid "Enter current Encfs password\n"
++msgstr "Aktuelles EncFS-Passwort eingeben\n"
++
++#: encfs/encfsctl.cpp:587
++msgid "Invalid password\n"
++msgstr "Ungültiges Passwort\n"
++
++#: encfs/encfsctl.cpp:593
++msgid "Enter new Encfs password\n"
++msgstr "Neues Encfs-Passwort eingeben\n"
++
++#: encfs/encfsctl.cpp:616
++msgid "Volume Key successfully updated.\n"
++msgstr "Dateisystemschlüssel erfolgreich aktualisiert.\n"
++
++#: encfs/encfsctl.cpp:620
++msgid "Error saving modified config file.\n"
++msgstr "Fehler beim Speichern der geänderten Konfigurationsdatei.\n"
++
++#: encfs/encfsctl.cpp:686
++#, c-format
++msgid "invalid command: \"%s\""
++msgstr "Ungültiger Befehl: »%s«"
++
++#: encfs/encfsctl.cpp:693
++#, c-format
++msgid "Incorrect number of arguments for command \"%s\""
++msgstr "Falsche Anzahl an Argumenten für den Befehl »%s«"
++
++#: encfs/FileUtils.cpp:148
++#, c-format
++msgid "The directory \"%s\" does not exist. Should it be created? (y,n) "
++msgstr "Das Verzeichnis »%s« existiert nicht. Soll es angelegt werden? (y,n) "
++
++#: encfs/FileUtils.cpp:157
+ msgid "Unable to create directory: "
+-msgstr "Verzeichnis konnte nicht angelegt werden: "
++msgstr "Verzeichnis kann nicht angelegt werden: "
+ 
+-#: encfs/FileUtils.cpp:338
++#: encfs/FileUtils.cpp:164
+ msgid "Directory not created."
+-msgstr "Kein Verzeichnis angelegt."
++msgstr "Verzeichnis wurde nicht angelegt."
+ 
+-#: encfs/FileUtils.cpp:360
++#: encfs/FileUtils.cpp:183
+ #, c-format
+ msgid "Found config file %s, but failed to load"
+-msgstr ""
+-"Konfigurationsdatei %s wurde gefunden, konnte aber nicht geladen werden"
++msgstr "Konfigurationsdatei %s wurde gefunden, konnte aber nicht geladen werden."
+ 
+-#: encfs/FileUtils.cpp:439
++#: encfs/FileUtils.cpp:232
+ #, c-format
+ msgid ""
+ "Config subversion %i found, but this version of encfs only supports up to "
+ "version %i."
+ msgstr ""
+-"Konfiguration für Unterversion %i gefunden. Diese EncFS-Version unterstützt "
+-"aber höchstens Version %i."
++"Konfigurationsdatei-Unterversion %i gefunden, aber diese Version von encfs "
++"unterstützt sie nur bis zur Version %i."
+ 
+-#: encfs/FileUtils.cpp:446
+-msgid ""
+-"This version of EncFS doesn't support filesystems created before 2004-08-13"
+-msgstr ""
+-"Diese Version von EncFS unterstützt keine Dateisysteme, die vor dem "
+-"13.08.2004 angelegt wurden"
++#: encfs/FileUtils.cpp:431
++#, c-format
++msgid "Error opening key file %s for write: %s"
++msgstr "Fehler beim Öffnen der Schlüsseldatei %s zum Schreiben: %s"
+ 
+-#: encfs/FileUtils.cpp:646
++#: encfs/FileUtils.cpp:465
+ msgid "The following cipher algorithms are available:"
+-msgstr "Die folgenden Verschlüsselungsalgorithmen sind verfügbar"
++msgstr "Die folgenden Verschlüsselungsalgorithmen sind verfügbar:"
+ 
+-#: encfs/FileUtils.cpp:658
++#: encfs/FileUtils.cpp:477
+ #, c-format
+ msgid " -- key length %i bits"
+-msgstr " --Schlüssellänge beträgt %i Bit"
++msgstr " -- Schlüssellänge %i Bits"
+ 
+-#: encfs/FileUtils.cpp:665
++#: encfs/FileUtils.cpp:484
+ #, c-format
+ msgid " -- Supports key lengths of %i to %i bits"
+-msgstr " unterstützte Schlüssellänge zwischen %i und %i Bits"
++msgstr " -- unterstützt Schlüssellängen von %i bis %i Bits"
+ 
+-#: encfs/FileUtils.cpp:674
++#: encfs/FileUtils.cpp:493
+ #, c-format
+ msgid " -- block size %i bytes"
+ msgstr " -- Blockgröße %i Bytes"
+ 
+-#: encfs/FileUtils.cpp:681
++#: encfs/FileUtils.cpp:500
+ #, c-format
+ msgid " -- Supports block sizes of %i to %i bytes"
+-msgstr " unterstützte Blockgröße zwischen %i und %i Bits"
++msgstr " -- unterstützt Blockgrößen von %i bis %i Bytes"
+ 
+-#: encfs/FileUtils.cpp:687 encfs/FileUtils.cpp:732
++#: encfs/FileUtils.cpp:506 encfs/FileUtils.cpp:551
+ msgid "Enter the number corresponding to your choice: "
+-msgstr "Geben Sie die Nummer Ihrer Auswahl an: "
++msgstr "Geben Sie die entsprechende Nummer zu Ihrer Auswahl an: "
+ 
+-#: encfs/FileUtils.cpp:695 encfs/FileUtils.cpp:740
++#: encfs/FileUtils.cpp:514 encfs/FileUtils.cpp:559
+ msgid "Invalid selection."
+ msgstr "Ungültige Auswahl."
+ 
+-#: encfs/FileUtils.cpp:706 encfs/FileUtils.cpp:749
++#: encfs/FileUtils.cpp:525 encfs/FileUtils.cpp:568
+ #, c-format
+ msgid "Selected algorithm \"%s\""
+-msgstr "Gewählter Algorithmus \"%s\""
++msgstr "Gewählter Algorithmus »%s«"
+ 
+-#: encfs/FileUtils.cpp:720
++#: encfs/FileUtils.cpp:539
+ msgid "The following filename encoding algorithms are available:"
+-msgstr ""
+-"Die folgenden Verschlüsselungsalgorithmen für Dateinamen stehen zur "
+-"Verfügung:"
++msgstr "Die folgenden Dateinamen-Kodierungs-Algorithmen sind verfügbar:"
+ 
+-#: encfs/FileUtils.cpp:761 encfs/FileUtils.cpp:808
++#: encfs/FileUtils.cpp:580 encfs/FileUtils.cpp:627
+ #, c-format
+ msgid "Using key size of %i bits"
+-msgstr "Verwenden Schlüssellänge von %i Bit"
++msgstr "Verwende Schlüssellänge von %i Bits"
+ 
+-#: encfs/FileUtils.cpp:768
++#: encfs/FileUtils.cpp:587
+ #, c-format
+ msgid ""
+ "Please select a key size in bits.  The cipher you have chosen\n"
+ "supports sizes from %i to %i bits in increments of %i bits.\n"
+ "For example: "
+ msgstr ""
+-"Bitte wählen Sie eine Schlüssellänge in Bit. Die von Ihnen gewählte "
+-"Verschlüsselung\n"
+-"unterstützt Längen von %i bis %i Bit in %i Bit Schritten.\n"
+-"Zum Beispiel: "
++"Bitte eine Schlüsselgröße in Bits wählen. Der von Ihnen gewählte \n"
++"Algorithmus unterstützt Größen von %i bis %i Bits \n"
++"(in Schritten von %i Bit).\n"
++"Beispiel: "
+ 
+-#: encfs/FileUtils.cpp:798
++#: encfs/FileUtils.cpp:617
+ msgid "Selected key size: "
+ msgstr "Gewählte Schlüssellänge: "
+ 
+-#: encfs/FileUtils.cpp:820 encfs/FileUtils.cpp:847
++#: encfs/FileUtils.cpp:639 encfs/FileUtils.cpp:666
+ #, c-format
+ msgid "Using filesystem block size of %i bytes"
+ msgstr "Verwende Dateisystem-Blockgröße von %i Bytes"
+ 
+-#: encfs/FileUtils.cpp:827
++#: encfs/FileUtils.cpp:646
+ #, c-format
+ msgid ""
+ "Select a block size in bytes.  The cipher you have chosen\n"
+ "supports sizes from %i to %i bytes in increments of %i.\n"
+ "Or just hit enter for the default (%i bytes)\n"
+ msgstr ""
+-"Wählen Sie eine Blockgröße (in Byte) aus. Der ausgewählte Algorithmus\n"
+-"unterstützt Größen von %i bis %i Byte in Schritten von je %i Byte.\n"
+-"Oder drücken Sie Enter, um die Vorgabe (%i Byte) zu übernehmen\n"
++"Wählen Sie eine Blockgröße (in Bytes) aus. Der ausgewählten Algorithmus\n"
++"unterstützt Größen von %i bis %i Bytes in Schritten von je %i Byte.\n"
++"Oder drücken Sie »Enter«, um die Vorgabe (%i Bytes) zu übernehmen.\n"
+ 
+-#: encfs/FileUtils.cpp:834
++#: encfs/FileUtils.cpp:653
+ msgid "filesystem block size: "
+ msgstr "Dateisystem-Blockgröße: "
+ 
+-#: encfs/FileUtils.cpp:857
+-msgid ""
+-"The default here is No.\n"
+-"Any response that does not begin with 'y' will mean No: "
+-msgstr ""
+-
+-#: encfs/FileUtils.cpp:875
++#: encfs/FileUtils.cpp:676
+ msgid ""
+ "Enable block authentication code headers\n"
+ "on every block in a file?  This adds about 12 bytes per block\n"
+ "to the storage requirements for a file, and significantly affects\n"
+ "performance but it also means [almost] any modifications or errors\n"
+-"within a block will be caught and will cause a read error."
++"within a block will be caught and will cause a read error.\n"
++"The default here is No.  \n"
++"Any response that does not begin with 'y' will mean No: "
+ msgstr ""
++"Einschalten der Blockauthentifizierung im Vorspann\n"
++"jedes Blockes der Datei (»block authentication code headers«)?\n"
++"Dieses fügt ca. 12 Bytes pro Block zu den Speicheranforderungen\n"
++"einer Datei hinzu und wird den Durchsatz signifikant verändern.\n"
++"Das heißt aber auch, dass [fast] alle Modifikationen oder\n"
++"Fehler in einem Block einen Lesefehler auslösen.\n"
++"Die Voreinstellung ist Nein.\n"
++"Alle Eingaben welche nicht mit 'y' beginnen, bedeuten Nein: "
+ 
+-#: encfs/FileUtils.cpp:887
++#: encfs/FileUtils.cpp:693
+ msgid ""
+ "Add random bytes to each block header?\n"
+ "This adds a performance penalty, but ensures that blocks\n"
+@@ -329,370 +481,154 @@
+ "later using encfsctl.\n"
+ "\n"
+ msgstr ""
+-"Nun wird ein Kennwort für das Dateisystem benötigt.\n"
+-"Da es keinen Mechanismus zur Wiederhestellung gibt, müssen Sie\n"
+-"sich an das Kennwort erinnern! Das Kennwort kann mit encfsctl\n"
+-"nächträglich geändert werden.\n"
++"Nun wird ein Passwort für das Dateisystem benötigt.\n"
++"Da es absolut keinen Mechanismus zur Wiederherstellung gibt, müssen\n"
++"Sie sich an das Passwort erinnern! Das Passwort kann mit encfsctl\n"
++"nachträglich geändert werden.\n"
+ "\n"
+ 
+-#: encfs/FileUtils.cpp:1196
++#: encfs/FileUtils.cpp:964
+ msgid "Failure generating new volume key! Please report this error."
+ msgstr ""
+-"Fehler beim Erzeugen des neuen Dateisystemschlüssels! Bitte melden Sie "
+-"diesen Fehler."
++"Erstellen des neuen Dateisystemschlüssels ist fehlgeschlagen! Bitte melden "
++"Sie diesen Fehler."
+ 
+-#: encfs/FileUtils.cpp:1209
++#: encfs/FileUtils.cpp:977
+ msgid "Name coding interface not supported"
+-msgstr "Schnittstelle zur Kodierung des Dateinamens nicht unterstützt"
++msgstr "Namenskodierungsschnittstelle nicht unterstützt"
+ 
+-#: encfs/FileUtils.cpp:1210
++#: encfs/FileUtils.cpp:978
+ msgid "The filename encoding interface requested is not available"
+ msgstr "Die Schnittstelle zur Kodierung des Dateinamens ist nicht verfügbar"
+ 
+-#: encfs/FileUtils.cpp:1243
++#: encfs/FileUtils.cpp:1012
+ #, c-format
+ msgid "Filesystem cipher: \"%s\", version %i:%i:%i"
+-msgstr "Dateisystem Chiffre: \"%s\", Version %i:%i:%i"
++msgstr "Dateisystem-Verschlüsselung: »%s«, Version %i:%i:%i"
+ 
+-#: encfs/FileUtils.cpp:1248 encfs/FileUtils.cpp:1274 encfs/FileUtils.cpp:1293
++#: encfs/FileUtils.cpp:1017 encfs/FileUtils.cpp:1043 encfs/FileUtils.cpp:1062
+ msgid " (NOT supported)\n"
+ msgstr " (NICHT unterstützt)\n"
+ 
+-#: encfs/FileUtils.cpp:1256 encfs/FileUtils.cpp:1281
++#: encfs/FileUtils.cpp:1025 encfs/FileUtils.cpp:1050
+ #, c-format
+ msgid " (using %i:%i:%i)\n"
+ msgstr " (verwende %i:%i:%i)\n"
+ 
+-#: encfs/FileUtils.cpp:1264
++#: encfs/FileUtils.cpp:1033
+ #, c-format
+ msgid "Filename encoding: \"%s\", version %i:%i:%i"
+-msgstr "Dateinamenskodierung: \"%s\", Version %i:%i:%i"
++msgstr "Dateinamenkodierung: »%s«, Version %i:%i:%i"
+ 
+-#: encfs/FileUtils.cpp:1288
++#: encfs/FileUtils.cpp:1057
+ #, c-format
+ msgid "Key Size: %i bits"
+ msgstr "Schlüssellänge: %i Bits"
+ 
+-#: encfs/FileUtils.cpp:1299
+-#, c-format
+-msgid "Using PBKDF2, with %i iterations"
+-msgstr ""
+-
+-#: encfs/FileUtils.cpp:1301
+-#, fuzzy, c-format
+-msgid "Salt Size: %i bits"
+-msgstr "Schlüssellänge: %i Bits"
+-
+-#: encfs/FileUtils.cpp:1310
++#: encfs/FileUtils.cpp:1072
+ #, c-format
+ msgid "Block Size: %i bytes + %i byte MAC header"
+-msgstr "Blockgrösse: %i Bytes + %i Byte MAC-Vorspann"
++msgstr "Blockgröße: %i Bytes + %i Byte MAC-Kopf"
+ 
+-#: encfs/FileUtils.cpp:1318
++#: encfs/FileUtils.cpp:1080
+ #, c-format
+ msgid "Block Size: %i bytes, including %i byte MAC header"
+-msgstr "Blockgröße: %i Byte, enthält %i Byte MAC-Kopf"
++msgstr "Blockgröße: %i Bytes, enthält %i Byte MAC-Kopf"
+ 
+-#: encfs/FileUtils.cpp:1325
++#: encfs/FileUtils.cpp:1087
+ #, c-format
+ msgid "Block Size: %i bytes"
+-msgstr "Blockgröße: %i Byte"
++msgstr "Blockgröße: %i Bytes"
+ 
+-#: encfs/FileUtils.cpp:1332
++#: encfs/FileUtils.cpp:1094
+ msgid "Each file contains 8 byte header with unique IV data.\n"
+-msgstr "Jede Datei enthält acht Byte Vorspann mit einmaligen IV Daten.\n"
++msgstr "Jede Datei enthält acht Byte Vorspann mit einmaligen IV-Daten (»unique IV data«).\n"
+ 
+-#: encfs/FileUtils.cpp:1337
++#: encfs/FileUtils.cpp:1099
+ msgid "Filenames encoded using IV chaining mode.\n"
+-msgstr "Dateinamensverschlüsselung benutzt IV Verkettungsmodus.\n"
++msgstr "Dateinamenkodierung benutzt IV-Verkettungsmodus (»IV chaining mode«).\n"
+ 
+-#: encfs/FileUtils.cpp:1342
++#: encfs/FileUtils.cpp:1104
+ msgid "File data IV is chained to filename IV.\n"
+ msgstr "Dateidaten IV sind mit Dateiname IV verkettet.\n"
+ 
+-#: encfs/FileUtils.cpp:1347
+-msgid "File holes passed through to ciphertext.\n"
+-msgstr ""
+-
+-#: encfs/FileUtils.cpp:1402
+-msgid "Error creating salt\n"
+-msgstr ""
+-
+ # start po-group: common
+-# start po-group: common
+-#: encfs/FileUtils.cpp:1431
++#: encfs/FileUtils.cpp:1123
+ msgid "EncFS Password: "
+ msgstr "EncFS-Passwort: "
+ 
+-#: encfs/FileUtils.cpp:1437
++#: encfs/FileUtils.cpp:1129
+ msgid "Zero length password not allowed\n"
+-msgstr "Ein leeres Passwort ist nicht erlaubt\n"
++msgstr "Ein leeres Passwort ist nicht erlaubt.\n"
+ 
+-#: encfs/FileUtils.cpp:1483
++#: encfs/FileUtils.cpp:1175
+ msgid "Internal error: socketpair() failed"
+ msgstr "Interner Fehler: socketpair() fehlgeschlagen"
+ 
+-#: encfs/FileUtils.cpp:1491
++#: encfs/FileUtils.cpp:1183
+ msgid "Internal error: fork() failed"
+ msgstr "Interner Fehler: fork() fehlgeschlagen"
+ 
+-#: encfs/FileUtils.cpp:1533
++#: encfs/FileUtils.cpp:1223
+ msgid "Internal error: failed to exec program"
+ msgstr "Interner Fehler: Ausführung des Programms fehlgeschlagen"
+ 
+-#: encfs/FileUtils.cpp:1561
++#: encfs/FileUtils.cpp:1252
+ msgid "New Encfs Password: "
+-msgstr "Neues EncFS-Passwort: "
++msgstr "Neues EncFS-Passwort eingeben: "
+ 
+-#: encfs/FileUtils.cpp:1564
++#: encfs/FileUtils.cpp:1255
+ msgid "Verify Encfs Password: "
+ msgstr "EncFS-Passwort bestätigen: "
+ 
+-#: encfs/FileUtils.cpp:1573
++#: encfs/FileUtils.cpp:1263
+ msgid "Passwords did not match, please try again\n"
+-msgstr "Die Passwörter stimmen nicht überein, bitte erneut versuchen\n"
+-
+-#: encfs/FileUtils.cpp:1596
+-msgid "The configuration loaded is not compatible with --reverse\n"
+-msgstr "Die geladene Konfiguration ist mit --reverse nicht kompatibel\n"
++msgstr "Passwörter verschieden, bitte erneut versuchen\n"
+ 
+-#: encfs/FileUtils.cpp:1605
++#: encfs/FileUtils.cpp:1284
+ #, c-format
+ msgid "Unable to find cipher %s, version %i:%i:%i"
+-msgstr "Kann Ziffer %s nicht finden, Version %i:%i:%i"
++msgstr "Kann Verschlüsselung %s nicht finden, Version %i:%i:%i"
+ 
+-#: encfs/FileUtils.cpp:1611
++#: encfs/FileUtils.cpp:1290
+ msgid "The requested cipher interface is not available\n"
+-msgstr "Die angeforderte Verschlüsselungsschnittstelle ist nicht verfügbar\n"
++msgstr "Die angeforderte Verschlüsselungsschnittstelle ist nicht verfügbar.\n"
+ 
+-#: encfs/FileUtils.cpp:1637
++#: encfs/FileUtils.cpp:1318
+ msgid "Error decoding volume key, password incorrect\n"
+-msgstr "Fehler beim Entschlüsseln des Datenträgers! Das Passwort ist falsch\n"
++msgstr "Fehler beim Dekodieren des Dateisystemschlüssels, das Passwort ist falsch\n"
+ 
+-#: encfs/FileUtils.cpp:1645
++#: encfs/FileUtils.cpp:1326
+ #, c-format
+ msgid "Unable to find nameio interface %s, version %i:%i:%i"
+ msgstr "Kann nameio-Schnittstelle %s nicht finden, Version %i:%i:%i"
+ 
+-#: encfs/FileUtils.cpp:1651
++#: encfs/FileUtils.cpp:1332
+ msgid "The requested filename coding interface is not available\n"
+ msgstr ""
+-"Die angeforderderte Schnittstelle zur Datennamenverschlüsselung ist\n"
+-"nicht verfügbar.\n"
+-
+-#: encfs/FileUtils.cpp:1696
+-msgid "Remount failed"
+-msgstr "Erneutes einhängen fehlgeschlagen"
+-
+-#: encfs/MACFileIO.cpp:216
+-#, c-format
+-msgid "MAC comparison failure in block %li"
+-msgstr "MAC Vergleichsfehler im Block %li"
++"Die angeforderte Schnittstelle zur Datennamenkodierung ist nicht verfügbar\n"
+ 
+-#: encfs/MACFileIO.cpp:222
++#: encfs/MACFileIOCompat.cpp:168 encfs/MACFileIO.cpp:194
+ msgid "MAC comparison failure, refusing to read"
+-msgstr "MAC Vergleichsfehler, verweigere Lesen"
+-
+-#: encfs/SSL_Cipher.cpp:201
+-msgid "8 byte block cipher"
+-msgstr "8-Byte-Blockchiffre"
+-
+-#: encfs/StreamNameIO.cpp:39
+-msgid "Stream encoding, keeps filenames as short as possible"
+-msgstr "Stromchiffre, möglichst kurze Dateinamen"
+-
+-# start po-group: usage
+-# start po-group: usage
+-#: encfs/encfsctl.cpp:85
+-msgid "  -- show information (Default command)"
+-msgstr "  -- Informationen anzeigen (Standardkommando)"
+-
+-#: encfs/encfsctl.cpp:88
+-msgid "  -- show key"
+-msgstr ""
+-
+-#: encfs/encfsctl.cpp:91
+-msgid "  -- change password for volume"
+-msgstr "  -- Passwort für Datenträger ändern"
+-
+-#: encfs/encfsctl.cpp:94
+-msgid ""
+-"  -- change password for volume, taking password from standard input.\n"
+-"\tNo prompts are issued."
+-msgstr ""
+-"  -- Passwort für Speichermedium ändern (wird von der Standardeingabe "
+-"gelesen).\n"
+-"\t\tEs erscheint keine Eingabeaufforderung."
+-
+-#: encfs/encfsctl.cpp:99
+-msgid "  -- show undecodable filenames in the volume"
+-msgstr "  -- Nicht entschlüsselbare Dateinamen auf dem Speichermedium anzeigen"
+-
+-#: encfs/encfsctl.cpp:102
+-msgid "  -- decodes the file and cats it to standard out"
+-msgstr ""
+-"  -- entschlüsselt die Datei und gibt den Inhalt an der Standardausgabe aus"
+-
+-#: encfs/encfsctl.cpp:105
+-msgid "  -- decodes name and prints plaintext version"
+-msgstr "  -- entschlüsselt den Namen und gibt die Textversion aus"
+-
+-#: encfs/encfsctl.cpp:108
+-msgid "  -- encodes a filename and print result"
+-msgstr "  -- einen Dateinamen verschlüsseln und das Ergebnis ausgeben"
+-
+-#: encfs/encfsctl.cpp:111
+-msgid "  -- decrypts a volume and writes results to path"
+-msgstr ""
+-"  -- einen Datenträger entschlüsseln und das Ergebnis unter dem Pfad "
+-"abspeichern"
+-
+-#: encfs/encfsctl.cpp:114
+-msgid "  -- print version number and exit"
+-msgstr "  -- Versionsnummer ausgeben und beenden"
+-
+-#: encfs/encfsctl.cpp:123 encfs/encfsctl.cpp:167
+-#, c-format
+-msgid "encfsctl version %s"
+-msgstr "encfsctl-Version %s"
+-
+-#: encfs/encfsctl.cpp:124
+-msgid "Usage:\n"
+-msgstr "Verwendung:\n"
+-
+-#: encfs/encfsctl.cpp:127
+-#, c-format
+-msgid ""
+-"%s (root dir)\n"
+-"  -- displays information about the filesystem, or \n"
+-msgstr ""
+-"%s (Wurzelverzeichnis)\n"
+-"  -- zeige Informationen über das Dateisystem, oder \n"
+-
+-#: encfs/encfsctl.cpp:144
+-#, c-format
+-msgid ""
+-"Example: \n"
+-"%s info ~/.crypt\n"
+-msgstr ""
+-"Beispiel: \n"
+-"%s info ~/.crypt\n"
+-
+-#: encfs/encfsctl.cpp:152
+-#, c-format
+-msgid "directory %s does not exist.\n"
+-msgstr "Verzeichnis %s existiert nicht.\n"
+-
+-#: encfs/encfsctl.cpp:187 encfs/encfsctl.cpp:708
+-msgid "Unable to load or parse config file\n"
+-msgstr "Konfigurationsdatei kann nicht geladen oder interpretiert werden\n"
+-
+-#: encfs/encfsctl.cpp:191
+-msgid ""
+-"A really old EncFS filesystem was found. \n"
+-"It is not supported in this EncFS build.\n"
+-msgstr ""
+-"Ein sehr altes EncFS Dateisystem wurde gefunden, \n"
+-"das in dieser EncFS Version nicht mehr unterstützt wird.\n"
+-
+-#: encfs/encfsctl.cpp:196
+-#, c-format
+-msgid "Version 3 configuration; created by %s\n"
+-msgstr "Version 3 Konfiguration; erstellt von %s\n"
+-
+-#: encfs/encfsctl.cpp:201
+-#, c-format
+-msgid "Version 4 configuration; created by %s\n"
+-msgstr "Version 4 Konfiguration; erstellt von %s\n"
+-
+-#: encfs/encfsctl.cpp:206
+-#, c-format
+-msgid "Version 5 configuration; created by %s (revision %i)\n"
+-msgstr "Version 5 Konfiguration; erstellt von %s (Revision %i)\n"
+-
+-#: encfs/encfsctl.cpp:212
+-#, c-format
+-msgid "Version 6 configuration; created by %s (revision %i)\n"
+-msgstr ""
++msgstr "MAC-Vergleichsfehler, verweigere Lesen"
+ 
+-#: encfs/encfsctl.cpp:250 encfs/main.cpp:331
++#: encfs/MACFileIOCompat.cpp:171 encfs/MACFileIO.cpp:189
+ #, c-format
+-msgid "getopt error: %i"
+-msgstr "getopt Fehler: %i"
+-
+-#: encfs/encfsctl.cpp:260
+-#, fuzzy
+-msgid "Incorrect number of arguments"
+-msgstr "Falsche Anzahl von Argumenten für den Befehl \"%s\""
+-
+-#: encfs/encfsctl.cpp:272 encfs/encfsctl.cpp:293
+-msgid "Unable to initialize encrypted filesystem - check path.\n"
+-msgstr ""
+-"Verschlüsseltes Dateisystem kann nicht initialisiert werden - prüfe Pfad.\n"
+-
+-#: encfs/encfsctl.cpp:642
+-#, c-format
+-msgid "In directory %s: \n"
+-msgstr "Im Verzeichnis %s: \n"
+-
+-#: encfs/encfsctl.cpp:690
+-#, c-format
+-msgid "Found %i invalid file."
+-msgid_plural "Found %i invalid files."
+-msgstr[0] "%i ungültige Datei gefunden."
+-msgstr[1] "%i ungültige Dateien gefunden."
+-
+-#: encfs/encfsctl.cpp:717
+-#, c-format
+-msgid "Unable to find specified cipher \"%s\"\n"
+-msgstr "Konnte das angegebene Verschlüsselungsverfahren \"%s\" nicht finden\n"
+-
+-#: encfs/encfsctl.cpp:723
+-msgid "Enter current Encfs password\n"
+-msgstr "Aktuelles EncFS-Passwort eingeben\n"
+-
+-#: encfs/encfsctl.cpp:734
+-msgid "Invalid password\n"
+-msgstr "Ungültiges Passwort\n"
+-
+-#: encfs/encfsctl.cpp:740
+-msgid "Enter new Encfs password\n"
+-msgstr "Neues EncFS-Passwort eingeben\n"
+-
+-#: encfs/encfsctl.cpp:766
+-msgid "Volume Key successfully updated.\n"
+-msgstr "Dateisystemschlüssel erfolgreich aktualisiert.\n"
+-
+-#: encfs/encfsctl.cpp:770
+-msgid "Error saving modified config file.\n"
+-msgstr "Fehler beim Speichern der geänderten Konfigurationsdatei.\n"
+-
+-#: encfs/encfsctl.cpp:774
+-msgid "Error creating key\n"
+-msgstr ""
+-
+-#: encfs/encfsctl.cpp:839
+-#, c-format
+-msgid "invalid command: \"%s\""
+-msgstr "Ungültiger Befehl: \"%s\""
+-
+-#: encfs/encfsctl.cpp:846
+-#, c-format
+-msgid "Incorrect number of arguments for command \"%s\""
+-msgstr "Falsche Anzahl von Argumenten für den Befehl \"%s\""
++msgid "MAC comparison failure in block %li"
++msgstr "MAC-Vergleichsfehler im Block %li"
+ 
+-#: encfs/main.cpp:127
++#: encfs/main.cpp:121
+ #, c-format
+ msgid "Build: encfs version %s"
+-msgstr "Build: encfs Version %s"
++msgstr "Build: encfs-Version %s"
+ 
+-#: encfs/main.cpp:130
++#: encfs/main.cpp:124
+ #, c-format
+ msgid "Usage: %s [options] rootDir mountPoint [-- [FUSE Mount Options]]"
+ msgstr ""
+-"Aufruf: %s [Optionen] Wurzelverzeichnis Mountpunkt [-- [FUSE Mount Optionen]]"
++"Aufruf: %s [Optionen] Wurzelverzeichnis Einhängepunkt [-- [FUSE-Einhänge-Optionen]]"
+ 
+-#: encfs/main.cpp:132
++#: encfs/main.cpp:126
+ msgid ""
+ "Common Options:\n"
+ "  -H\t\t\tshow optional FUSE Mount Options\n"

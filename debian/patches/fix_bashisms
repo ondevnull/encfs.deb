@@ -1,0 +1,13 @@
+Index: encfs-1.3.2-1.obsolete.0.191581650710763/encfs/encfssh
+===================================================================
+--- encfs-1.3.2-1.obsolete.0.191581650710763.orig/encfs/encfssh	2008-02-10 20:27:25.000000000 +0100
++++ encfs-1.3.2-1.obsolete.0.191581650710763/encfs/encfssh	2008-02-10 20:28:16.000000000 +0100
+@@ -29,7 +29,7 @@
+ 	fi
+     done
+ else
+-    unenc_dir=.$RANDOM.$RANDOM
++    unenc_dir="$(mktemp -d)"
+ fi
+ 
+ if [ ! -d "$enc_dir" ]; then

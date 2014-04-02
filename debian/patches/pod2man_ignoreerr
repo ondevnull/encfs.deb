@@ -1,0 +1,22 @@
+--- encfs-1.7.4.obsolete.0.0496004659953577/encfs/Makefile.am	2010-11-04 04:49:00.000000000 +0100
++++ encfs-1.7.4.fscked/encfs/Makefile.am	2014-04-02 20:27:37.708844000 +0200
+@@ -138,7 +138,7 @@
+ SUFFIXES = .1 .pod
+ # since we have POD2MAN, we can specify how to rebuild encfs.1 if necessary
+ .pod.1:
+-	@POD2MAN@ --section=1 --release=@VERSION@ --center="Encrypted Filesystem" $< $@
++	@POD2MAN@ --errors=stderr --section=1 --release=@VERSION@ --center="Encrypted Filesystem" $< $@
+ 
+ CLEANFILES = encfs.1 encfsctl.1
+ endif
+--- encfs-1.7.4.obsolete.0.0496004659953577/encfs/Makefile.in	2010-11-18 09:11:04.000000000 +0100
++++ encfs-1.7.4.fscked/encfs/Makefile.in	2014-04-02 20:27:51.459958128 +0200
+@@ -934,7 +934,7 @@
+ all-local: encfs-man.html
+ # since we have POD2MAN, we can specify how to rebuild encfs.1 if necessary
+ @BUILD_MAN_TRUE@.pod.1:
+-@BUILD_MAN_TRUE@	@POD2MAN@ --section=1 --release=@VERSION@ --center="Encrypted Filesystem" $< $@
++@BUILD_MAN_TRUE@	@POD2MAN@ --errors=stderr --section=1 --release=@VERSION@ --center="Encrypted Filesystem" $< $@
+ 
+ @BUILD_MANHTML_TRUE@encfs-man.html: encfs.pod
+ @BUILD_MANHTML_TRUE@	@POD2HTML@ encfs.pod > $@

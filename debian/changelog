@@ -1,0 +1,217 @@
+encfs (1.7.4-3) unstable; urgency=low
+
+  * NMUs confirmed (closes: #634217, #621181, #613289, #629326)
+  * Removed patch with useless config.log inside (closes: #630436)
+  * Added workaround for broken boost checks, retrying explicitly with
+    multiarch lib directory (closes: #741810)
+  * Fixed the second build in a row, ignoring minor mistakes in pod files
+    reported with latest pod2man version as fatal error
+
+ -- Eduard Bloch <blade@debian.org>  Wed, 02 Apr 2014 20:35:24 +0200
+
+encfs (1.7.4-2.4) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add kfreebsd-any to Architecture list, and fix fuse-utils dependency
+    to make encfs buildable and installable on GNU/kFreeBSD.  (Closes: #634217)
+
+ -- Robert Millan <rmh@debian.org>  Tue, 29 Nov 2011 06:45:54 +0000
+
+encfs (1.7.4-2.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/control: Switch to unversioned Boost build-dependencies.
+    (Closes: #630436).
+
+ -- Steve M. Robbins <smr@debian.org>  Fri, 22 Jul 2011 23:49:50 -0500
+
+encfs (1.7.4-2.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/rules: Remove references to other libraries from the
+    dependency_libs field in libencfs.la (Closes: #621181).
+
+ -- Luk Claes <luk@debian.org>  Thu, 26 May 2011 08:28:55 +0200
+
+encfs (1.7.4-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Use Architecture linux-any, fuse-utils does not exist on
+    kfreebsd (Closes: #613289).
+
+ -- Agustin Martin Domingo <agmartin@debian.org>  Mon, 14 Mar 2011 09:40:16 +0100
+
+encfs (1.7.4-2) unstable; urgency=low
+
+  * Corrected lintian overrides, policy setting
+
+ -- Eduard Bloch <blade@debian.org>  Mon, 27 Dec 2010 21:09:57 +0100
+
+encfs (1.7.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Eduard Bloch <blade@debian.org>  Mon, 27 Dec 2010 20:55:47 +0100
+
+encfs (1.7.2-1) unstable; urgency=high
+
+  * New upstream release dealing with security issues (closes: #595998)
+
+ -- Eduard Bloch <blade@debian.org>  Thu, 16 Sep 2010 15:43:04 +0200
+
+encfs (1.7.1-1) experimental; urgency=high
+
+  * New upstream release (closes: #594963)
+  * debian/patches/i18n_updates: rediffed to match new offsets
+  * debian/rules: now really removing outdated de_* locales files in the
+    package (closes: #354226)
+  * Updated lintian overrides
+
+ -- Eduard Bloch <blade@debian.org>  Wed, 01 Sep 2010 22:40:26 +0200
+
+encfs (1.6.1-1) unstable; urgency=low
+
+  * New upstream release
+    + contains workarounds for boost transition (closes: #506966)
+    + gcc 4.4 fixes integrated (gcc4.4_fix patch disabled)
+  * moved from quilt patch system to dpkg "3.0 (quilt)" source format
+
+ -- Eduard Bloch <blade@debian.org>  Sun, 20 Jun 2010 21:30:14 +0200
+
+encfs (1.5.2-3) unstable; urgency=low
+
+  * Enforced use of boost 1.40, libboost-serialization1.42.0 breaks
+    backwards compatibility of xml data format (#581203)
+
+ -- Eduard Bloch <blade@debian.org>  Tue, 11 May 2010 23:59:20 +0200
+
+encfs (1.5.2-2+b1) unstable; urgency=low
+
+  * Binary-only non-maintainer upload for amd64; no source changes.
+  * Rebuild with new boost-deaults
+
+ -- amd64 Build Daemon (brahms) <buildd_amd64-brahms@buildd.debian.org>  Mon, 10 May 2010 16:05:04 +0000
+
+encfs (1.5.2-2) unstable; urgency=low
+
+  * Rebuild with version dependency on librlog5
+  * de.po update from Mathias Klein, removed other de_*.po (closes: #354226)
+  * README.Debian updated (closes: #498976), debian/copyright update to GPLv3
+  * gcc-4.4 build fix from Klaus Ethgen (closes: #546378)
+  * debian/watch update, thanks to Yan Morin (closes: #554492)
+  * added lintian overrides to ignore messages related to private shared lib
+
+ -- Eduard Bloch <blade@debian.org>  Thu, 03 Dec 2009 00:05:28 +0100
+
+encfs (1.5.2-1) unstable; urgency=low
+
+  * New upstream release 1.5-2
+  * Updated Build-Deps to work with Boost 1.38 packages (closes: #530464)
+  * Minor policy/debconf related updates
+
+ -- Eduard Bloch <blade@debian.org>  Mon, 25 May 2009 20:52:38 +0200
+
+encfs (1.4.2-2) unstable; urgency=low
+
+  * added more Boost parts to build-dependencies (closes: #481867)
+  * dropped LDFLAGS workarounds since linking list reduction (-Wl,--as-needed)
+    wouldn't change much
+
+ -- Eduard Bloch <blade@debian.org>  Thu, 22 May 2008 01:15:04 +0200
+
+encfs (1.4.2-1) unstable; urgency=low
+
+  * New upstream release
+    + broken ulockmgr support is gone (closes: #466316, #472697, #465336)
+
+ -- Eduard Bloch <blade@debian.org>  Mon, 19 May 2008 01:41:51 +0200
+
+encfs (1.4.1.1-2) unstable; urgency=low
+
+  * FTBFS fixes by Klaus Ethgen
+    + Adding build dependencies to libboost-dev
+    + Fixing pthread issue
+
+ -- Eduard Bloch <blade@debian.org>  Tue, 12 Feb 2008 22:50:32 +0100
+
+encfs (1.4.1.1-1) unstable; urgency=low
+
+  * New upstream release (closes: #460287)
+    + allows symlink to root directory (closes: #460047)
+  * bashism fix in ecnfssh (using mktemp, closes: #464645)
+  * adding missing string.h include directives (closes: #454896)
+  * added use of quilt to manage the above
+  * added the link to the new "main" homepage, the old ones pointed only to
+    the old version
+
+ -- Eduard Bloch <blade@debian.org>  Sun, 10 Feb 2008 21:24:29 +0100
+
+encfs (1.3.2-1-1) unstable; urgency=low
+
+  * New upstream release (closes: #405419)
+  * remove recommendation of module building from package description, FUSE is
+    in the kernel now (closes: #406233)
+
+ -- Eduard Bloch <blade@debian.org>  Thu, 29 Mar 2007 21:30:16 +0200
+
+encfs (1.2.5-1-1) unstable; urgency=low
+
+  * New upstream release
+  * build-dep to conflict with broken libfuse-dev (2.4.0)
+
+ -- Eduard Bloch <blade@debian.org>  Sat, 07 Jan 2006 15:51:59 +0100
+
+encfs (1.2.4.1-2) unstable; urgency=low
+
+  * forcing rebuild with libssl0.9.8
+
+ -- Eduard Bloch <blade@debian.org>  Mon, 10 Oct 2005 13:59:50 +0200
+
+encfs (1.2.4.1-1) unstable; urgency=low
+
+  * New upstream release (1.2.4-1, relabeled as usual)
+  * copyright file updates, OpenSSL statement in the README now
+  * added fuse-utils dependency (closes: #324997)
+  * added watch file
+
+ -- Eduard Bloch <blade@debian.org>  Sun, 04 Sep 2005 10:40:33 +0200
+
+encfs (1.2.3.1-2) unstable; urgency=low
+
+  * g++-4.0 transition: depending on librlog1c2
+
+ -- Eduard Bloch <blade@debian.org>  Wed, 13 Jul 2005 18:55:21 +0200
+
+encfs (1.2.3.1-1) unstable; urgency=low
+
+  * New upstream release 1.2.3-1 (renamed for Debian version consistency)
+    + makes return code consistent (closes: #315623)
+    + encfsctl.cpp uses correct namespaces (closes: #302197)
+    + releases memory after bad access attempts correctly (closes: #308482)
+    + fixes rename operation failures on directories with invalid symlinks
+      therein (closes: #315624)
+  * forcing g++-3.3 as compiler for now, something is fishy with 3.4/4.0
+
+ -- Eduard Bloch <blade@debian.org>  Mon, 11 Jul 2005 17:31:57 +0200
+
+encfs (1.2.0-3) unstable; urgency=low
+
+  * fixed ugly punctuation errors in the description (closes: #301870)
+
+ -- Eduard Bloch <blade@debian.org>  Tue, 29 Mar 2005 03:33:24 +0200
+
+encfs (1.2.0-2) unstable; urgency=low
+
+  * put the comlete text of the upstream mail with OpenSSL exception into
+    debian/copyright
+
+ -- Eduard Bloch <blade@debian.org>  Mon, 28 Mar 2005 00:58:58 +0200
+
+encfs (1.2.0-1) unstable; urgency=low
+
+  * Initial Release (closes: #288081)
+  * Got more explicit OpenSSL linking permission in a signed mail, see
+    http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288081 for details.
+
+ -- Eduard Bloch <blade@debian.org>  Thu, 10 Mar 2005 10:30:54 +0100
+
