@@ -24,6 +24,12 @@ else
 	CFLAGS += -O2
 endif
 
+ifeq ($(DEB_HOST_GNU_CPU),i486)
+	MOD_ARCH = i386
+else
+	MOD_ARCH = $(DEB_HOST_GNU_CPU)
+endif
+
 export CFLAGS
 export LDFLAGS
 
@@ -31,7 +37,7 @@ config.status: configure
 	dh_testdir
 	# Add here commands to configure the package.
 	#-autoreconf -fi
-	./configure $(CONFARG) || ./configure $(CONFARG) --with-boost-libdir=/usr/lib/$(DEB_HOST_GNU_TYPE)
+	./configure $(CONFARG) || ./configure $(CONFARG) --with-boost-libdir=/usr/lib/$(MOD_ARCH)-$(DEB_HOST_GNU_SYSTEM)
 	touch config.status
 
 build: build-stamp
@@ -49,7 +55,7 @@ clean:
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp 
-	./configure $(CONFARG) || ./configure $(CONFARG) --with-boost-libdir=/usr/lib/$(DEB_HOST_GNU_TYPE)
+	./configure $(CONFARG) || ./configure $(CONFARG) --with-boost-libdir=/usr/lib/$(MOD_ARCH)-$(DEB_HOST_GNU_SYSTEM)
 	$(MAKE) distclean || true
 	-rm -f config.log
 #ifneq "$(wildcard /usr/share/misc/config.sub)" ""
